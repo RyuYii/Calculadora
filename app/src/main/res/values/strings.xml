@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calcu Super Chida</string>
+    <string name="btn_suma">suma</string>
+    <string name="btn_resta">resta</string>
+    <string name="btn_multi">multiplicacion</string>
+    <string name="btn_div">division</string>
+    <string name="hitn_number">escribe un numero</string>
+
+</resources>
