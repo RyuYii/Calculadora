@@ -1,10 +1,12 @@
 package com.example.calculadora;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -22,19 +24,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void suma(View view){
-        Integer resp_num = Integer.parseInt(num1.getText().toString()) + Integer.parseInt(num2.getText().toString());
-        res.setText(resp_num + "");
+
+        try {
+            Integer resp_num = Integer.parseInt(num1.getText().toString()) + Integer.parseInt(num2.getText().toString());
+            res.setText(resp_num + "");
+        }
+        catch (Exception e){
+            Toast.makeText(this, "numero no valido", Toast.LENGTH_SHORT).show();
+        }
+
     }
     public void resta(View view){
-        Integer resp_num = Integer.parseInt(num1.getText().toString()) - Integer.parseInt(num2.getText().toString());
-        res.setText(resp_num + "");
+        try {
+            Integer resp_num = Integer.parseInt(num1.getText().toString()) - Integer.parseInt(num2.getText().toString());
+            res.setText(resp_num + "");
+        }
+        catch (Exception e){
+            Toast.makeText(this, "numero no valido", Toast.LENGTH_SHORT).show();
+        }
     }
     public void div(View view){
-        Integer resp_num = Integer.parseInt(num1.getText().toString()) / Integer.parseInt(num2.getText().toString());
-        res.setText(resp_num + "");
+        try {
+            Integer resp_num = Integer.parseInt(num1.getText().toString()) / Integer.parseInt(num2.getText().toString());
+            res.setText(resp_num + "");
+        }
+        catch (Exception e){
+            Toast.makeText(this, "numero no valido", Toast.LENGTH_SHORT).show();
+        }
     }
     public void mul(View view){
-        Integer resp_num = Integer.parseInt(num1.getText().toString()) * Integer.parseInt(num2.getText().toString());
-        res.setText(resp_num + "");
+        try {
+            Integer resp_num = Integer.parseInt(num1.getText().toString()) * Integer.parseInt(num2.getText().toString());
+            res.setText(resp_num + "");
+        }
+        catch (Exception e){
+            Toast.makeText(this, "numero no valido", Toast.LENGTH_SHORT).show();
+        };
+    }
+    public void change_about(View view){
+        Intent i =  new Intent(this, about.class);
+        startActivity(i);
     }
 }
